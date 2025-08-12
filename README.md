@@ -1,50 +1,21 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<body>
-    <h1>LOGIN</h1>
-        <form onsubmit="return validateForm()"method="post"action="bsit.php">
-            <label > Username: </label>
-            <input type="text" id="username" name="password"/>
-            <label>Password: </label>
-            <input type="password" id="password" name="password"/>
-            <button type="submit">Log In</button>
-         </form>
-         <script src="febie.js"></script>
-    </body>
-    </head>
-</head>
-
-    <head>
-   
-<style>
-   body{
-    background-color: bisque;
+<?php
+$conn = mysqli_connect ("localhost", "root", "", "psits");
+if(!$conn){
+    die("Faile Connection");
 }
-h1{
-    color: blueviolet;
+
+$email = $_POST['email'];
+
+$sql = "Select = from students Where email = '$email' and password = '$password'";
+$result=mysqli_query($conn, $sql);
+
+if(mysqli_num_rows($result) >0){
+    echo"SUCCESS";
+    exit();
 }
-p1{
-    color: red;
+else{
+    echo("No Connection");
 }
-</style>
-        <script>
-            function validateForm() {
-    const username = document.getElementById("username").value.trim();
-    const password = document.getElementById("password").value.trim();
+mysqli_close($conn);
 
-    if (username === "" || password === "") {
-        alert("Please fill in both username and password.");
-        return false; 
-    }
-
-    console.log("Username:", username);
-    console.log("Password:", password);
-
-    return true; 
-}
-        </script>
-         </head>
-
-
+?>
