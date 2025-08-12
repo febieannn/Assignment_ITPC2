@@ -1,49 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<body>
-    <h1>LOGIN</h1>
-        <form onsubmit="return validateForm()"method="post"action="bsit.php">
-            <label > Username: </label>
-            <input type="text" id="username" name="password"/>
-            <label>Password: </label>
-            <input type="password" id="password" name="password"/>
-            <button type="submit">Log In</button>
-         </form>
-         <script src="febie.js"></script>
-    </body>
-    </head>
-</head>
-
+<html>
+    <title>LOGIN</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+            form {
+                max-width: 300px;
+                margin: auto;
+                }
+            }
+    </style>
     <head>
-   
-<style>
-   body{
-    background-color: bisque;
-}
-h1{
-    color: blueviolet;
-}
-p1{
-    color: blue;
-}
-</style>
-        <script>
-            function validateForm() {
-    const username = document.getElementById("username").value.trim();
-    const password = document.getElementById("password").value.trim();
+        <body>
 
-    if (username === "" || password === "") {
-        alert("Please fill in both username and password.");
-        return false; 
-    }
+        <h1>LOGIN</h1>
+    <form onsubmit = "return ValidateForm()" method = "post" action = "login.php">
+        <label>  Username: </label>
+        <input type = "text" id = "username" name = "username" />
 
-    console.log("Username:", username);
-    console.log("Password:", password);
+        <label> Password: </label>
+        <input type = "password" id = "password" name = "password" />
 
-    return true; 
-}
-        </script>
-         </head>
-
-
+        <button type = "submit"> LOGIN </button>
+    </form>
+    <script scr = "login.js"></script>    
+        </body>
+    </head>
+</html>
